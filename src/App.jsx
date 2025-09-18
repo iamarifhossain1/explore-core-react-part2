@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Counter from './Counter'
 
 function App() {
   function handleClick() {
     alert('You have clicked me')
   }
+
+
 
 const handleClick3 = () => {
   alert('Alert Number 3')
@@ -21,6 +21,12 @@ const handleNum = (num) => {
     <>
       
       <h1>Vite + React</h1>
+      <Counter></Counter>
+      
+      
+
+
+
       <button onClick={handleClick}>Click Me</button>
       <button onClick={function handleClick2() {
         alert('You have clicked me2')
