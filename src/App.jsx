@@ -1,5 +1,9 @@
 import './App.css'
 import Counter from './Counter'
+import Player from './Player'
+import Bowler from './Bowler'
+
+
 
 function App() {
   function handleClick() {
@@ -21,11 +25,9 @@ const handleNum = (num) => {
     <>
       
       <h1>Vite + React</h1>
+      <Bowler name="Arif Hossain"></Bowler>
+      <Player></Player>
       <Counter></Counter>
-      
-      
-
-
 
       <button onClick={handleClick}>Click Me</button>
       <button onClick={function handleClick2() {

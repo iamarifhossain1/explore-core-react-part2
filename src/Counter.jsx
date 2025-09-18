@@ -7,6 +7,14 @@ export default function Counter(){
         setCount(newCount)
     }
 
+    const removeCount = () => { 
+        const remove = count - 1
+        if(remove < 0) {
+            return 0;
+        }
+        setCount(remove)
+    }
+
     const countStyle = {
         border: '2px solid goldenrod',
         marginLeft: '20px'
@@ -17,6 +25,7 @@ export default function Counter(){
         <div style={countStyle}>
             <h3>Counter: {count}</h3>
             <button onClick={handleClick}>Add Count</button>
+            <button onClick={removeCount}>Remove Count</button>
         </div>
     )
 }
