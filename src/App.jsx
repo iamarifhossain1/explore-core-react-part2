@@ -5,30 +5,41 @@ import Bowler from './Bowler'
 import Users from './Users'
 import { Suspense } from 'react'
 import Friends from './Friends'
-import Post from './Posts'
+import Posts from './Posts'
+import Todos from './Todos'
 
 
-const fetchUser = fetch('https://jsonplaceholder.typicode.com/users')
-.then(response => response.json())
+// const fetchUser = fetch('https://jsonplaceholder.typicode.com/users')
+// .then(response => response.json())
 
 
-const fetchFriends = async () => { 
-  const fetchFriend = await fetch('https://jsonplaceholder.typicode.com/users')
-  const response = await fetchFriend.json()
+// const fetchFriends = async () => { 
+//   const fetchFriend = await fetch('https://jsonplaceholder.typicode.com/users')
+//   const response = await fetchFriend.json()
+//   return response;
+// }
+
+// const loadPost = async () =>{ 
+//   const fetchdData = await fetch('https://jsonplaceholder.typicode.com/posts');
+//   const response = await fetchdData.json();
+//   return response;
+// }
+
+
+const loadTodos = async () => {
+  const fetchTodos = await fetch('https://jsonplaceholder.typicode.com/todos');
+  const response = await fetchTodos.json();
   return response;
 }
 
-const loadPost = async () => { 
-  const fetchPost = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const response = await fetchPost.json()
-  return response;
-}
 
 function App() {
-  const postsPromise = loadPost()
+  
+  const todosPromise = loadTodos();
 
 // const friendsPromise = fetchFriends();
 
+  // const postPromise = loadPost()
 
   function handleClick() {
     alert('You have clicked me')
@@ -50,9 +61,13 @@ const handleNum = (num) => {
       
       <h1>Vite + React</h1>
 
-      <Suspense fallback={<p>Post Loading....</p>}>
-        <Post postsPromise={postsPromise}></Post>
+      <Suspense fallback={<h3>Todos Loading...</h3>}>
+        <Todos todosPromise={todosPromise}></Todos>
       </Suspense>
+
+      {/* <Suspense fallback={<h3>Post Loading....</h3>}>
+        <Posts postPromise={postPromise}></Posts>
+      </Suspense> */}
 
       {/* <Suspense fallback={<h3>Loading...</h3>}>
         <Users fetch={fetchUser}></Users>

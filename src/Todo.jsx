@@ -1,5 +1,5 @@
-export default function Post({post}){
-    const {id, title} = post
+export default function Todo({todo}){
+    const {id, title} = todo;
     return(
         <div className="users">
             <h3>ID: {id}</h3>
